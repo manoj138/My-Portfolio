@@ -3,7 +3,7 @@ import React from "react";
 // import logos
 import VSCodeLogo from "../assets/stack/vscode.png";
 import AILogo from "../assets/stack/Chatgpt.jpg";
-import GitHubLogo from "../assets/stack/GitHub.svg";
+import GitHub from "../assets/stack/GitHub.svg";
 import VercelLogo from "../assets/stack/vercel-text.svg";
 import Vite from "../assets/stack/vite.svg";
 
@@ -11,7 +11,7 @@ const Tools = () => {
   const tools = [
     { name: "VS Code", logo: VSCodeLogo },
     { name: "AI Tools", logo: AILogo },
-    { name: "GitHub", logo: GitHubLogo },
+    { name: "GitHub", logo: GitHub },
     { name: "Vercel", logo: VercelLogo },
     { name: "vite", logo: Vite },
   ];
