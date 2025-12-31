@@ -13,7 +13,7 @@ import Redux from "../assets/stack/Redux.svg";
 import Tailwind from "../assets/stack/Tailwind.png";
 import Express from "../assets/stack/Express.png";
 import Git from "../assets/stack/Git.svg";
-import GitHub from "../assets/stack/GitHub.svg";
+import GitHub from "../assets/stack/Github.svg";
 
 import MongoDB from "../assets/stack/MongoDB.svg";
 import Vercel from "../assets/stack/Vercel.svg";
