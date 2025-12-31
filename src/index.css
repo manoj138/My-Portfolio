@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+
+
+
+@layer utilities {
+
+  /* Profile Hover Animation */
+  @keyframes profileHover {
+    0% { transform: scale(0.95) rotate(-1deg); filter: grayscale(0.8); }
+    50% { transform: scale(1.05) rotate(1deg); filter: grayscale(0); }
+    100% { transform: scale(0.95) rotate(-1deg); filter: grayscale(0.8); }
+  }
+  .animate-profileHover {
+    animation: profileHover 6s ease-in-out infinite alternate;
+  }
+
+  /* Floating Y Animation */
+  @keyframes floatY {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+  }
+  .animate-floatY {
+    animation: floatY 4s ease-in-out infinite;
+  }
+  .animate-floatY2 {
+    animation: floatY 6s ease-in-out infinite;
+  }
+
+  /* Floating X Animation */
+  @keyframes floatX {
+    0%,100% { transform: translateX(0); }
+    50% { transform: translateX(25px); }
+  }
+  .animate-floatX {
+    animation: floatX 5s ease-in-out infinite;
+  }
+
+  /* Rotate Y Animation */
+  @keyframes rotateY {
+    0%,100% { transform: rotateY(0deg); }
+    50% { transform: rotateY(180deg) translateY(20px); }
+  }
+  .animate-rotateY {
+    animation: rotateY 5s ease-in-out infinite;
+  }
+
+  /* Slow floating background circles */
+  @keyframes floatSlow {
+    0%,100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(40px) translateX(20px); }
+  }
+  .animate-floatSlow {
+    animation: floatSlow 12s ease-in-out infinite alternate;
+  }
+
+  @keyframes floatSlow2 {
+    0%,100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-30px) translateX(-20px); }
+  }
+  .animate-floatSlow2 {
+    animation: floatSlow2 15s ease-in-out infinite alternate;
+  }
+}
