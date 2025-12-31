@@ -13,7 +13,8 @@ import Redux from "../assets/stack/Redux.svg";
 import Tailwind from "../assets/stack/Tailwind.png";
 import Express from "../assets/stack/Express.png";
 import Git from "../assets/stack/Git.svg";
-import Github from "../assets/stack/Github.svg";
+import GitHub from "../assets/stack/GitHub.svg";
+
 import MongoDB from "../assets/stack/MongoDB.svg";
 import Vercel from "../assets/stack/Vercel.svg";
 
@@ -27,7 +28,7 @@ const tech = [
   { img: Tailwind, name: "Tailwind CSS" },
   { img: Express, name: "Express" },
   { img: Git, name: "Git" },
-  { img: Github, name: "GitHub" },
+  { img: GitHub, name: "GitHub" },
   { img: MongoDB, name: "MongoDB" },
   { img: Vercel, name: "Vercel" },
 ];
