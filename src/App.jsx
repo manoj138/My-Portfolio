@@ -8,6 +8,8 @@ import Navbar from './components/Navbar'
 import ProjectSection from './components/ProjectSection'
 import TechstackSection from './components/TechstackSection'
 import Tools from './components/Tools';
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
 
@@ -22,6 +24,10 @@ function App() {
       <Tools/>
       <ContactSection/>
       <FooterSection/>
+
+      {/* <Routes>
+        <Route path={"/contact"} element={<ContactSection/>}/>
+      </Routes> */}
   </div>
     </>
   )

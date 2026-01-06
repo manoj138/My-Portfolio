@@ -12,7 +12,7 @@ const FooterSection = () => {
   ];
 
   return (
-    <footer className="relative  overflow-hidden ">
+    <footer className="relative bottom-0">
       <div className="absolute inset-0 bg-linear-to-tr from-gray-900 via-gray-800 to-black animate-[pulse_6s_ease-in-out_infinite]" />
 
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-175 h-75 bg-pink-500/20 blur-3xl rounded-full" />

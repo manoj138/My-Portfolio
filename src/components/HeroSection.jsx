@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import { motion } from "framer-motion";
-console.log(motion);
+console.log("🚀 ~ motion:", motion)
+import { Link } from "react-scroll";
 
 import profile from "../assets/userassets/1706018807358.jpg";
 import zigzag from "../assets/userassets/zigzags.png";
@@ -20,7 +21,6 @@ const HeroSection = () => {
       typeSpeed: 100,
       backSpeed: 80,
       backDelay: 1000,
-     
     });
 
     return () => typed.destroy();
@@ -31,12 +31,7 @@ const HeroSection = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.2 }}
-      className="w-full min-h-screen p-10 py-30 relative -top-40 overflow-hidden text-white bg-linear-to-br from-gray-950 via-gray-900 to-gray-950"
-      whileMouseMove={(e) => {
-        const x = (e.clientX - window.innerWidth / 2) / 60;
-        const y = (e.clientY - window.innerHeight / 2) / 60;
-        return { x, y };
-      }}
+      className="w-full min-h-screen p-10 py-30 relative -top-40 overflow-hidden text-white bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950"
     >
       {/* animated gradient blobs */}
       <motion.div
@@ -44,13 +39,11 @@ const HeroSection = () => {
         animate={{ y: [0, 20, 0], x: [0, 20, 0] }}
         transition={{ duration: 6, repeat: Infinity, repeatType: "mirror" }}
       />
-
       <motion.div
         className="absolute top-1/3 -right-24 w-96 h-96 bg-pink-500/35 blur-3xl rounded-full"
         animate={{ y: [0, -15, 0], x: [0, -15, 0] }}
         transition={{ duration: 5, repeat: Infinity, repeatType: "mirror", delay: 2 }}
       />
-
       <motion.div
         className="absolute bottom-0 left-1/3 w-96 h-96 bg-blue-600/35 blur-3xl rounded-full"
         animate={{ y: [0, 25, 0], x: [0, 25, 0] }}
@@ -70,16 +63,17 @@ const HeroSection = () => {
           transition={{ duration: 1 }}
         >
           <div className="flex flex-col">
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-snug bg-clip-text text-transparent bg-linear-to-r from-pink-300 via-purple-300 to-blue-300 drop-shadow-[0_5px_25px_rgba(255,255,255,0.08)]">
-              Hi! Manoj Chougule
-            </h2>
+         <div className="text-3xl md:text-5xl flex sm:items-center flex-col md:flex-row font-extrabold leading-snug bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 drop-shadow-[0_5px_25px_rgba(255,255,255,0.08)]">
+  <span className="text-2xl md:text-5xl">Hi!</span>
+  <span className="md:ml-2">Manoj Chougule</span>
+</div>
 
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.9, delay: 0.2 }}
             >
-              <h2 className="text-2xl md:text-4xl font-bold mt-3">
+              <h2 className="text-lg md:text-4xl lg:text-4xl font-bold mt-3">
                 I am a{" "}
                 <span
                   ref={roleRef}
@@ -94,31 +88,65 @@ const HeroSection = () => {
             Constantly learning — constantly improving.
           </p>
 
+          {/* Buttons side by side */}
+          <div className="flex gap-4 mt-6 flex-wrap">
+            {/* Hire Me Button */}
+      <Link
+  to="contact"
+  smooth={true}
+  duration={800}
+>
+  <motion.button
+    className="
+      relative px-7 py-3 rounded-xl font-semibold
+      border border-white/20
+      bg-white/10 backdrop-blur-xl
+      shadow-[0_15px_35px_rgba(0,0,0,0.45)]
+      hover:shadow-[0_20px_45px_rgba(0,0,0,0.6)]
+      hover:bg-white/20
+      transition-all duration-300
+      hover:scale-110
+      before:absolute before:inset-0 before:rounded-xl
+      before:bg-gradient-to-r before:from-pink-500/30 before:to-purple-500/30
+      before:opacity-0 hover:before:opacity-100 before:transition
+    "
+    whileHover={{ scale: 1.1, rotate: 2 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    Hire me
+  </motion.button>
+</Link>
+
+
+
+            {/* Download CV Button */}
           <a
-            href="assets/userassets/Manoj_Mansing_Chougule_100_ATS_Resume (1).pdf"
-            target="_blank"
-            download
-          >
-            <motion.button
-              className="
-                mt-6 relative px-7 py-3 rounded-xl font-semibold
-                border border-white/20
-                bg-white/10 backdrop-blur-xl
-                shadow-[0_15px_35px_rgba(0,0,0,0.45)]
-                hover:shadow-[0_20px_45px_rgba(0,0,0,0.6)]
-                hover:bg-white/20
-                transition-all duration-300
-                hover:scale-110
-                before:absolute before:inset-0 before:rounded-xl
-                before:bg-linear-to-r before:from-pink-500/30 before:to-purple-500/30
-                before:opacity-0 hover:before:opacity-100 before:transition
-              "
-              whileHover={{ scale: 1.1, rotate: 2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Hire me
-            </motion.button>
-          </a>
+  href="https://drive.google.com/file/d/16sOSUvLCiYF4bFmSh2fXtEmRs9pjSPDy/view?usp=sharing"
+  download="Manoj_Chougule_CV.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <motion.button
+    className="
+      relative px-7 py-3 rounded-xl font-semibold
+      border border-white/20
+      bg-white/10 backdrop-blur-xl
+      shadow-[0_15px_35px_rgba(0,0,0,0.45)]
+      hover:shadow-[0_20px_45px_rgba(0,0,0,0.6)]
+      hover:bg-white/20
+      transition-all duration-300 hover:scale-110
+      before:absolute before:inset-0 before:rounded-xl
+      before:bg-gradient-to-r before:from-purple-500/30 before:to-blue-500/30
+      before:opacity-0 hover:before:opacity-100 before:transition
+    "
+    whileHover={{ scale: 1.1, rotate: 2 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    Download CV
+  </motion.button>
+</a>
+
+          </div>
         </motion.div>
 
         {/* RIGHT IMAGE */}
@@ -131,14 +159,7 @@ const HeroSection = () => {
           <motion.img
             src={profile}
             alt="profile"
-            className="
-              w-80 md:w-96 rounded-3xl p-4
-              bg-white/5 border border-white/15 backdrop-blur-xl
-              shadow-[0_25px_60px_rgba(0,0,0,0.6)]
-              ring-1 ring-white/10
-              hover:ring-pink-400/30
-              transition-all duration-500
-            "
+            className="w-80 md:w-96 rounded-3xl p-4 bg-white/5 border border-white/15 backdrop-blur-xl shadow-[0_25px_60px_rgba(0,0,0,0.6)] ring-1 ring-white/10 hover:ring-pink-400/30 transition-all duration-500"
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, repeatType: 'mirror' }}
           />
@@ -146,7 +167,7 @@ const HeroSection = () => {
           {/* shine sweep */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
             <motion.div
-              className="absolute -inset-20 bg-linear-to-r from-transparent via-white/10 to-transparent"
+              className="absolute -inset-20 bg-gradient-to-r from-transparent via-white/10 to-transparent"
               animate={{ x: ["-120%", "120%"] }}
               transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             />

@@ -88,7 +88,7 @@ const ProjectSection = () => {
                 <h2 className="text-3xl font-bold mb-2">RazorPay Clone</h2>
                 <p className="text-gray-300">Simple UI clone for payment gateway landing page.</p>
 
-             <div className="flex gap-4 mt-4">
+             <div className="flex items-center  gap-4 mt-4">
   <a
     href="https://razorpay-clone-9h97.vercel.app/"
     target="_blank"
@@ -133,7 +133,7 @@ const ProjectSection = () => {
                 <h2 className="text-3xl font-bold mb-2">Discord Clone</h2>
                 <p className="text-gray-300">Responsive community chat style interface design.</p>
 
-            <div className="flex gap-4 mt-4">
+            <div className="flex  items-center  gap-4 mt-4">
   <a
     href="https://discord-clone-umber-one.vercel.app/"
     target="_blank"
@@ -177,7 +177,7 @@ const ProjectSection = () => {
                 <h2 className="text-3xl font-bold mb-2">Bubble-Hit Game</h2>
                 <p className="text-gray-300">Fun bubble shooting game using HTML, CSS & JavaScript.</p>
 
-              <div className="flex gap-4 mt-4">
+              <div className="flex items-center gap-4 mt-4">
   <a
     href="https://bubble-hit-game-rho.vercel.app/"
     target="_blank"
