@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 console.log("🚀 ~ motion:", motion)
 import emailjs from "@emailjs/browser";
-import Astra from "../assets/Astra.png";
 
 const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
@@ -60,8 +59,8 @@ export default function ContactForm() {
         SERVICE_ID,
         TEMPLATE_ID,
         {
-          from_name: formData.name,
-          reply_to: formData.email,
+          name: formData.name,
+          email: formData.email,
           service: formData.service,
           budget: formData.budget,
           idea: formData.idea,
@@ -91,20 +90,7 @@ export default function ContactForm() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
         {/* LEFT IMAGE */}
-        <motion.div
-          className="w-full md:w-1/2 flex justify-center"
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <motion.img
-            src={Astra}
-            alt="Contact"
-            className="w-72 md:w-[400px] rounded-3xl shadow-2xl object-cover"
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </motion.div>
+       
 
         {/* RIGHT FORM */}
         <motion.div
