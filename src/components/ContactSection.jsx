@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-console.log("🚀 ~ motion:", motion)
 import emailjs from "@emailjs/browser";
 
+// Load env variables
 const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
@@ -22,9 +22,7 @@ export default function ContactForm() {
   /* ---------------- HANDLE CHANGE ---------------- */
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     if (name === "budget" && !/^\d*$/.test(value)) return;
-
     setFormData((prev) => ({ ...prev, [name]: value }));
 
     if (errors[name]) {
@@ -36,13 +34,11 @@ export default function ContactForm() {
   const validateForm = () => {
     const required = ["name", "email", "service", "budget", "idea"];
     let newErrors = {};
-
     required.forEach((field) => {
       if (!formData[field].trim()) {
         newErrors[field] = "This field is required";
       }
     });
-
     setErrors(newErrors);
     return Object.keys(newErrors).length;
   };
@@ -59,6 +55,7 @@ export default function ContactForm() {
         SERVICE_ID,
         TEMPLATE_ID,
         {
+          // 🔑 These must match your template variables exactly
           name: formData.name,
           email: formData.email,
           service: formData.service,
@@ -83,16 +80,8 @@ export default function ContactForm() {
   };
 
   return (
-    <section
-      id="contact"
-      className="w-full min-h-screen relative bg-black overflow-hidden text-white py-24"
-    >
-
-      <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-        {/* LEFT IMAGE */}
-       
-
-        {/* RIGHT FORM */}
+    <section className="w-full min-h-screen bg-black text-white py-24">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
         <motion.div
           className="w-full md:w-1/2 bg-white/10 backdrop-blur-xl p-8 rounded-3xl shadow-xl border border-white/20"
           initial={{ opacity: 0, x: 60 }}
@@ -104,78 +93,40 @@ export default function ContactForm() {
           </h2>
 
           <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-            {/* NAME */}
-            <Input
-              label="Your Name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              error={errors.name}
-            />
-
-            {/* EMAIL */}
-            <Input
-              label="Your Email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              error={errors.email}
-            />
+            <Input label="Your Name" name="name" value={formData.name} onChange={handleChange} error={errors.name} />
+            <Input label="Your Email" name="email" type="email" value={formData.email} onChange={handleChange} error={errors.email} />
 
             {/* SERVICE */}
             <div className="flex flex-col">
-              <label className="mb-1 text-sm opacity-80">
-                Service Needed <span className="text-red-500">*</span>
-              </label>
+              <label className="mb-1 text-sm opacity-80">Service Needed *</label>
               <select
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className={`p-3 rounded-xl bg-black/40 border ${
-                  errors.service ? "border-red-500" : "border-white/20"
-                } text-white`}
+                className={`p-3 rounded-xl bg-black/40 border ${errors.service ? "border-red-500" : "border-white/20"} text-white`}
               >
-                <option value="" disabled>
-                  Something in mind?
-                </option>
+                <option value="" disabled>Something in mind?</option>
                 <option value="Web Development">Web Development</option>
                 <option value="Mobile Application">Mobile Application</option>
                 <option value="UI/UX Design">UI / UX Design</option>
                 <option value="MERN Stack">MERN Stack</option>
                 <option value="Other">Other</option>
               </select>
-              {errors.service && (
-                <p className="text-red-500 text-xs mt-1">{errors.service}</p>
-              )}
+              {errors.service && <p className="text-red-500 text-xs mt-1">{errors.service}</p>}
             </div>
 
-            {/* BUDGET */}
-            <Input
-              label="Budget"
-              name="budget"
-              value={formData.budget}
-              onChange={handleChange}
-              error={errors.budget}
-            />
+            <Input label="Budget" name="budget" value={formData.budget} onChange={handleChange} error={errors.budget} />
 
-            {/* IDEA */}
             <div className="flex flex-col">
-              <label className="mb-1 text-sm opacity-80">
-                Project Idea <span className="text-red-500">*</span>
-              </label>
+              <label className="mb-1 text-sm opacity-80">Project Idea *</label>
               <textarea
                 rows="4"
                 name="idea"
                 value={formData.idea}
                 onChange={handleChange}
-                className={`p-3 rounded-xl bg-black/40 border ${
-                  errors.idea ? "border-red-500" : "border-white/20"
-                }`}
+                className={`p-3 rounded-xl bg-black/40 border ${errors.idea ? "border-red-500" : "border-white/20"}`}
               />
-              {errors.idea && (
-                <p className="text-red-500 text-xs mt-1">{errors.idea}</p>
-              )}
+              {errors.idea && <p className="text-red-500 text-xs mt-1">{errors.idea}</p>}
             </div>
 
             <button
@@ -186,16 +137,8 @@ export default function ContactForm() {
               {status === "sending" ? "Sending..." : "Send Message"}
             </button>
 
-            {status === "success" && (
-              <p className="text-green-400 text-center mt-3">
-                Message sent successfully ✅
-              </p>
-            )}
-            {status === "error" && (
-              <p className="text-red-500 text-center mt-3">
-                Failed to send message ❌
-              </p>
-            )}
+            {status === "success" && <p className="text-green-400 text-center mt-3">Message sent successfully ✅</p>}
+            {status === "error" && <p className="text-red-500 text-center mt-3">Failed to send message ❌</p>}
           </form>
         </motion.div>
       </div>
@@ -203,22 +146,11 @@ export default function ContactForm() {
   );
 }
 
-/* ---------------- INPUT COMPONENT ---------------- */
 function Input({ label, name, value, onChange, error, type = "text" }) {
   return (
     <div className="flex flex-col">
-      <label className="mb-1 text-sm opacity-80">
-        {label} <span className="text-red-500">*</span>
-      </label>
-      <input
-        type={type}
-        name={name}
-        value={value}
-        onChange={onChange}
-        className={`p-3 rounded-xl bg-black/40 border ${
-          error ? "border-red-500" : "border-white/20"
-        }`}
-      />
+      <label className="mb-1 text-sm opacity-80">{label} *</label>
+      <input type={type} name={name} value={value} onChange={onChange} className={`p-3 rounded-xl bg-black/40 border ${error ? "border-red-500" : "border-white/20"}`} />
       {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
     </div>
   );
