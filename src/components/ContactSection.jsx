@@ -12,7 +12,7 @@ export default function ContactForm() {
   const [errors, setErrors] = useState({});
   const [sending, setSending] = useState(false);
 
-  // Initialize EmailJS only once
+  // Initialize EmailJS once
   useEffect(() => {
     emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   }, []);
@@ -30,21 +30,21 @@ export default function ContactForm() {
     if (!formData.email) newErrors.email = "Email is required";
     if (!formData.subject) newErrors.subject = "Subject is required";
     if (!formData.message) newErrors.message = "Message is required";
-
     setErrors(newErrors);
     if (Object.keys(newErrors).length > 0) return;
 
     setSending(true);
 
+    // Send email
     emailjs
       .send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          from_name: formData.name,   // matches {{from_name}} in template
-          reply_to: formData.email,   // matches {{reply_to}} in template
-          subject: formData.subject,  // matches {{subject}} in template
-          message: formData.message,  // matches {{message}} in template
+          name: formData.name,       // matches {{name}} in template
+          email: formData.email,     // matches {{email}} in template
+          subject: formData.subject, // matches {{subject}} in template
+          message: formData.message, // matches {{message}} in template
         }
       )
       .then(() => {
