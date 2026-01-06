@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-console.log("🚀 ~ motion:", motion)
 import emailjs from "@emailjs/browser";
 
 // Load env variables
@@ -78,7 +77,7 @@ export default function ContactForm() {
 
   return (
     <motion.div
-      className="text-white relative -mt-20"
+      className="text-white relative -mt-20 px-4 md:px-6 lg:px-0"
       id="contact"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -88,7 +87,7 @@ export default function ContactForm() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.08),transparent_60%)]" />
 
       <motion.h2
-        className="text-cyan-400 text-4xl md:text-5xl lg:text-6xl text-center font-extrabold mb-4 tracking-tight"
+        className="text-cyan-400 text-5xl md:text-5xl lg:text-6xl text-center font-extrabold mb-4 tracking-tight"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
@@ -106,7 +105,7 @@ export default function ContactForm() {
       </motion.p>
 
       <section className="w-full pb-16 md:pb-20">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-center gap-8 md:gap-10 lg:gap-12 ">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-center gap-8 md:gap-10 lg:gap-12 px-2 md:px-6">
           <motion.div
             className="w-full md:w-4/5 lg:w-1/2 bg-white/10 backdrop-blur-xl p-5 sm:p-7 md:p-8 rounded-3xl shadow-xl border border-white/20"
             initial={{ opacity: 0, x: 60 }}

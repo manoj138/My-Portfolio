@@ -63,7 +63,7 @@ const HeroSection = () => {
           transition={{ duration: 1 }}
         >
           <div className="flex flex-col">
-         <div className="text-3xl md:text-5xl flex sm:items-center flex-col md:flex-row font-extrabold leading-snug bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 drop-shadow-[0_5px_25px_rgba(255,255,255,0.08)]">
+         <div className="text-4xl md:text-5xl flex sm:items-center flex-col md:flex-row font-extrabold leading-snug bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 drop-shadow-[0_5px_25px_rgba(255,255,255,0.08)]">
   <span className="text-2xl md:text-5xl">Hi!</span>
   <span className="md:ml-2">Manoj Chougule</span>
 </div>

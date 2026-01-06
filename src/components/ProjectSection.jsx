@@ -20,7 +20,7 @@ const ProjectSection = () => {
         Projects
       </h2>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 lg:grid-rows-2 gap-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 lg:grid-rows-2 gap-10 px-4">
 
         {/* CARD 1 */}
         <motion.div
@@ -30,7 +30,7 @@ const ProjectSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <div className="relative py-3 rounded-2xl border  bg-white/5 backdrop-blur-md shadow-[0_20px_60px_-10px_rgba(0,0,0,.7)] transition-all duration-500 ease-out transform-gpu group-hover:-rotate-x-3 group-hover:rotate-y-6 group-hover:scale-[1.04]">
+          <div className="relative py-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-[0_20px_60px_-10px_rgba(0,0,0,.7)] transition-all duration-500 ease-out transform-gpu group-hover:-rotate-x-3 group-hover:rotate-y-6 group-hover:scale-[1.04]">
             <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-30 transition bg-white/20 blur-2xl" />
             <div className="absolute -top-6 left-4 text-white text-6xl opacity-30 font-bold">01</div>
 
@@ -181,7 +181,7 @@ const ProjectSection = () => {
   <a
     href="https://bubble-hit-game-rho.vercel.app/"
     target="_blank"
-    className=" py-2 rounded-lg border border-cyan-400/60 text-cyan-300 hover:bg-cyan-400 hover:text-gray-900 transition"
+    className="px-4 py-2 rounded-lg border border-cyan-400/60 text-cyan-300 hover:bg-cyan-400 hover:text-gray-900 transition"
   >
     Read More
   </a>

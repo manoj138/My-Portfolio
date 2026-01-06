@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-<div className="min-h-screen relative bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+<div className="min-h-screen overflow-x-hidden relative bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
   <Navbar />
   <HeroSection />
   <ProjectSection />

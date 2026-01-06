@@ -37,15 +37,15 @@ const TechstackSection = () => {
   return (
     <section className="relative bg-gray-900 py-20 -top-40" id="tech">
       {/* Title */}
-      <h2 className="text-center text-4xl md:text-6xl font-extrabold text-pink-500 tracking-wide">
+      <h2 className="text-center text-5xl md:text-6xl font-extrabold text-pink-500 tracking-wide">
         Tech Stack
       </h2>
 
       <div className="max-w-6xl mx-auto mt-10 flex flex-col md:flex-row justify-between items-center gap-10 px-6">
         {/* Left Text */}
         <div className="md:w-2/5">
-          <h3 className="text-3xl text-pink-500 font-semibold">
-            <span className="text-7xl">M</span>e and
+          <h3 className="text-2xl lg:text-3xl text-pink-500 font-bold">
+            <span className="text-6xl lg:text-7xl">M</span>e and
           </h3>
 
           <h3 className="text-white text-3xl font-semibold mt-1">

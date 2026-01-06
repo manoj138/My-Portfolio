@@ -12,7 +12,7 @@ const FooterSection = () => {
   ];
 
   return (
-    <footer className="relative bottom-0">
+    <footer className="relative  overflow-hidden ">
       <div className="absolute inset-0 bg-linear-to-tr from-gray-900 via-gray-800 to-black animate-[pulse_6s_ease-in-out_infinite]" />
 
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-175 h-75 bg-pink-500/20 blur-3xl rounded-full" />
@@ -24,7 +24,7 @@ const FooterSection = () => {
         transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center  space-y-6 md:space-y-0">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 md:px-0 space-y-6 md:space-y-0">
           {/* Left Links */}
           <motion.div
             className="flex flex-row md:flex-row gap-6 text-lg font-semibold"
