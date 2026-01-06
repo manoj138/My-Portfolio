@@ -104,14 +104,12 @@ export default function ContactForm() {
       />
       {errors.message && <small className="text-red-400">{errors.message}</small>}
 
-      <button
+      <input
         type="submit"
         disabled={sending}
         className="w-full py-3 font-semibold rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 text-gray-900 disabled:opacity-60"
-      >
-        {sending ? "Sending..." : "Send Message"}
-        
-      </button>
+      />
+
     </form>
   );
 }
