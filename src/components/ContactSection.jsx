@@ -120,6 +120,7 @@ export default function ContactForm() {
               <Input label="Your Name" name="name" value={formData.name} onChange={handleChange} error={errors.name} />
 
               <Input
+               
                 label="Your Email"
                 name="email"
                 type="email"
@@ -134,7 +135,7 @@ export default function ContactForm() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className={`p-3 rounded-xl bg-black/40 border ${
+                  className={`p-3 rounded-xl bg-black/60 border ${
                     errors.service ? "border-red-500" : "border-white/20"
                   } text-white`}
                 >
@@ -159,7 +160,7 @@ export default function ContactForm() {
                   name="idea"
                   value={formData.idea}
                   onChange={handleChange}
-                  className={`p-3 rounded-xl bg-black/40 border ${
+                  className={`p-3 rounded-xl bg-black/60 border ${
                     errors.idea ? "border-red-500" : "border-white/20"
                   }`}
                 />
@@ -197,7 +198,7 @@ function Input({ label, name, value, onChange, error, type = "text" }) {
         name={name}
         value={value}
         onChange={onChange}
-        className={`p-3 rounded-xl bg-black/40 border ${
+        className={`p-3 rounded-xl bg-black/60 border ${
           error ? "border-red-500" : "border-white/20"
         }`}
       />
