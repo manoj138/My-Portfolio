@@ -99,6 +99,7 @@ export default function ContactForm() {
         rows="5"
         value={formData.message}
         onChange={handleChange}
+        required
         className="w-full p-4 rounded-xl bg-white/5 text-white border border-white/20 focus:ring-2 focus:ring-cyan-400 outline-none resize-none"
       />
       {errors.message && <small className="text-red-400">{errors.message}</small>}
