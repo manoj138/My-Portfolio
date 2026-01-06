@@ -31,7 +31,7 @@ const HeroSection = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.2 }}
-      className="w-full min-h-screen p-10 py-30 relative -top-40 overflow-hidden text-white bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950"
+      className="w-full min-h-screen p-10 py-30 relative -top-30 overflow-hidden text-white bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950"
     >
       {/* animated gradient blobs */}
       <motion.div
@@ -54,7 +54,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),transparent_60%)] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.75))]" />
 
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 px-4 md:px-6 py-20 relative z-10">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10  py-20 relative z-10">
         {/* LEFT TEXT */}
         <motion.div
           className="space-y-6"

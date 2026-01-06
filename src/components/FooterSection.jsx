@@ -24,7 +24,7 @@ const FooterSection = () => {
         transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 md:px-0 space-y-6 md:space-y-0">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center  space-y-6 md:space-y-0">
           {/* Left Links */}
           <motion.div
             className="flex flex-row md:flex-row gap-6 text-lg font-semibold"
